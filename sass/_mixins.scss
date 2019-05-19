@@ -1,0 +1,61 @@
+//-------------mixins------------//
+@mixin backgroundImg ($src,$imgSize,$repeat){
+    background-image: url($src);
+    background-size: $imgSize;
+    background-repeat:$repeat;
+    // width:$width;
+    // height:$height;
+}
+
+@mixin linearGradient ($primaryColor,$secondaryColor){
+    background-image: -webkit-linear-gradient(0deg, $primaryColor 0%, $secondaryColor 100%); 
+    
+}
+%zeroMagrinPadding{
+    padding: 0px;
+    margin: 0px;
+}
+%iconprop{
+    font-size: 40px;
+    color:$primaryIconColor
+}
+%buttonProperties{
+border-radius:$buttonBorderRaduis;
+padding:$buttonPadding;
+line-height:$buttonLineHeight;
+font-weight: $fontWeight;
+text-decoration: none;
+cursor: pointer;
+}
+%buttonHover{
+    box-shadow: $boxShadow;
+    transition: box-shadow 0.7s ease-in-out;
+}
+%sectionProps{
+    max-width: 700px;
+    margin: $auto;
+    text-align: $alignCenter;
+    padding: $sectionPadding;
+}
+%container{
+    width:$containerWidth;
+    margin:$auto;
+}
+%grid{
+    display: $display;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+%btnprops{
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0.5em;
+}
+//--------each---------//
+$fonts:(h1:60px,h2:36px,h3:24px,h4:20px);
+@each $key,$val in $fonts{
+    #{$key}{
+        font-size: $val;
+        @extend %zeroMagrinPadding;
+    }
+}

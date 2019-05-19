@@ -1,0 +1,73 @@
+//--------------colors-------------//
+$primaryColor:#bc2bff;
+$secondaryColor:#7249fb;
+//-------------bg colors----------//
+$lightGreyBgColor:#f9faff;
+$footerBgColor:#222222;
+$iconsBgColor:#111111;
+//------------icon colors----------//
+$primaryIconColor:#fff;
+$secondaryIconColor:#6247ea;
+
+
+//-------------font colors and sizes-------------//
+//-------------font colors-------------//
+$primaryFontColor:#fff;
+$secondaryFontColor: #777777;
+$lightButtonsFontColor:#222222;
+$commentsFont:#aaaaaa;
+//-------------font sizes-------------//
+$mainFontSize:14px;
+//-------------font casses-------------//
+$upperCase:uppercase;
+$fontWeight:600;
+//--------------buttons and inputs----------------//  
+$buttonBorderRaduis: 5px;
+$buttonPadding:15px 45px;
+$buttonLineHeight:50px;
+$inputBorderRaduis:20px;
+//-------------font type----------------//
+$primaryFontFamily:Open_Sans;
+$paragraphFontFamily:Roboto;
+$primaryFontFamilyUrL:"../fonts/OpenSans-Regular.ttf";
+$paragraphFontFamilyUrl:"../fonts/Roboto-Regular.ttf";
+//-------------bgimages-----------------//
+
+$mainBgImg:"../img/banner/home-banner.jpg";
+$imgSize:cover;
+$repeat:no-repeat;
+
+//--------------aligment and others--------//
+$auto:0 auto;
+$alignCenter:center;
+$sectionPadding:120px 0px;
+$padding:40px;
+$paddingBox:30px 60px;
+$mainMarginButtom:15px;
+$mainMarign:20px;
+$display:grid;
+$boxShadow:0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+$containerWidth:85%;
+$vendors:"-moz-","-webkit-","-o-","-ms-"," ";
+
+
+@mixin ay7aga($ay7agabrdo){
+    @each $i in $vendors {
+        #{$i}border-raduis:$ay7agabrdo;
+    }
+};
+
+
+
+
+
+//hover on .parent 
+
+.parent {
+
+     &:hover
+.class1
+           { }
+                
+       
+}

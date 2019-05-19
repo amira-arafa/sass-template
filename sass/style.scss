@@ -1,0 +1,395 @@
+@import "variables";
+@import "mixins";
+@import "base";
+/*----fonts----*/
+@font-face{
+    font-family:$primaryFontFamily;
+    src: url($primaryFontFamilyUrL);
+}
+@font-face{
+    font-family:$paragraphFontFamily;
+    src: url($paragraphFontFamilyUrl);
+}
+/*----Reset----*/
+*{
+    box-sizing: border-box;
+}
+body{
+    @extend %zeroMagrinPadding;
+    font-size:$mainFontSize;
+    font-family: $primaryFontFamily;
+}
+figure{
+    margin: 0px;
+}
+p{
+    font-family:$paragraphFontFamily;
+    color:$secondaryFontColor;
+    line-height: 1.618*$mainFontSize;
+}
+.container{
+    @extend %container;
+}
+.flex{
+    display: flex;
+}
+i{
+    @extend %iconprop;
+}
+.padbot{
+    padding-bottom: 60px;
+  }
+/*------begin of header-----*/
+header{
+    @include linearGradient($primaryColor,$secondaryColor);
+    z-index: 1;
+
+}
+.container
+{
+    .navBarContainer{
+        display: flex;
+        figure{
+            padding-top:20px;
+        }
+    }
+}
+header{
+    position: fixed;
+    width:100%;
+    nav{
+        ul{
+            list-style-type: none;
+            color:$primaryFontColor;
+            text-transform: $upperCase;
+            margin-left: 350px;
+            li{ 
+                display: inline-block;
+                margin-right:$mainMarign+10px;
+                a{
+                    font: 600 12px/50px $primaryFontFamily;
+                }
+            }
+        }
+    }
+}
+/*------end of header-------*/
+/*------begin of hero section------*/
+.herosection{
+    @include backgroundImg ($mainBgImg,$imgSize,$repeat);
+    .container{
+        width:$containerWidth;
+        section{
+            display: flex;
+            padding:$sectionPadding;
+            main{
+                color:$primaryFontColor;
+                margin-right: 350px;
+                max-width: 450px;
+                h1{
+                    margin-bottom: $mainMarginButtom;
+                }
+                div{
+                    margin-bottom: $mainMarginButtom*2+10px;
+                    font-family:$paragraphFontFamily;
+                    line-height: 1.618*$mainFontSize;
+                }
+                .btn{
+                    background-color: $primaryIconColor;
+                    text-decoration: none;
+                    @extend %buttonProperties;
+                    &:hover {
+                    @extend %buttonHover;
+                    }
+                    
+                }              
+            }
+        }
+    }
+}
+
+/*------end of hero section-------*/
+/*------begin of Unique Features section------*/
+.Unique_Features{
+    @extend %sectionProps;
+}
+/*------end of Unique Features section------*/
+/*------begin of maintanence section------*/
+.maintanence{
+    padding-bottom: 120px;
+    .container{
+        section{
+            @extend %grid;
+            div{
+                figure{
+                    margin-bottom: $mainMarginButtom*2;
+                }
+                padding: 50px 30px;
+                box-shadow:$boxShadow;
+            }
+        }
+    }
+}
+/*------end of maintanence section------*/
+/*------begin of products section------*/
+.products{
+    padding: 65px;
+    background-color: $lightGreyBgColor;
+    img{
+        margin-right: $mainMarginButtom*3;
+    }
+    div{
+        h4{
+            margin-bottom:$mainMarginButtom;
+        }
+        p{
+            margin-bottom: $mainMarginButtom*2+10px;
+            width: 473px;
+        }
+        a{
+            color:$primaryFontColor;
+            @include linearGradient ($primaryColor,$secondaryColor) ;
+            text-decoration: none;
+            @extend %buttonProperties;
+            &:hover {
+            @extend %buttonHover;
+            }
+        }   
+    }
+}
+/*------end of products section------*/
+/*------begin of products part2 section------*/
+.products_part2{
+    @extend .products;
+    background-color:white;
+}
+/*------end of products part2  section------*/
+/*------begin of video section------*/
+.video{
+    padding: 60px;
+    a{
+        position: relative;
+        bottom: 280px;
+        left: 525px;
+    }
+}
+/*------end of video section------*/
+/*------begin of pricing table section------*/
+.pricing_table{
+    background-color: $lightGreyBgColor;
+    @extend %sectionProps;
+    max-width: 100%;
+    padding-bottom: 60px;
+    
+}
+/*------end of pricing table section------*/
+/*------start of prices section------*/
+.prices{
+    background-color: $lightGreyBgColor;
+    .container{       
+      section{
+        display: flex;
+        div{
+            margin-right: 20px;  
+            background-color: #fff;
+            .flex{
+                padding: $padding;
+                h2{
+                    margin-left: $mainMarginButtom*3;
+                }
+            }
+            ul{
+                list-style-type: none;
+                text-align: $alignCenter;
+                padding: 0px;
+                margin-bottom: $mainMarginButtom*2;
+            }
+            a{
+                @extend %buttonProperties;
+                color: $footerBgColor;
+                background-color: $lightGreyBgColor;
+                margin-left: 82px;
+                border: 1px solid #dddddd;
+                margin-bottom: 40px;
+
+                &:hover{
+                    color:#fff;
+                    @include linearGradient ($primaryColor,$secondaryColor)
+                }
+            }
+        }
+      }
+    }
+}
+/*------end of prices section------*/
+/*------begin of unique screenshots prices section-----*/
+.unique_screenshots{
+    .unique_screenshots1{
+        @extend .pricing_table;
+    }img{
+        margin-right: 20px;
+        padding-bottom: 120;
+    }
+}
+/*------end of unique screenshots prices section-----*/
+/*----begin of testimonials section------*/
+.Testimonials{
+    padding-bottom: 120px;
+    .personalinfo{
+        padding: 10px;
+        div{
+            width: 370px;
+            margin-right: 90px;
+        }
+        background-color: #fff;
+        width: 530px;
+        margin-right: 23px;
+    }
+  
+    background-color: $lightGreyBgColor;
+    img{
+        margin-right: 50px;
+        padding: 15px 0px;
+    }
+    .Testimonials1{
+        @extend .pricing_table;
+    }
+}
+/*----end of testimonials section------*/
+/*-----start download app section------*/
+.Download_App{
+    @extend %sectionProps;
+    color:$primaryFontColor;
+    @include linearGradient($primaryColor,$secondaryColor);
+    max-width: 100%;
+    .andrionbtn{
+        padding: 18px 50px;
+        margin-left: 20px;
+    }
+    h2{
+        margin-bottom: 25px;
+    }
+    p{
+        width:750px;
+        margin: 0 auto;
+        color:$primaryFontColor;
+        margin-bottom: 40px;
+    }
+    button{
+        @extend %btnprops;
+        padding: 20px 50px;
+        height: 87px;
+        margin-left: 419px;
+        i{
+            margin-right: 26px;
+        }
+        p{
+            width: 81px;
+        }
+        h4{
+            color:$primaryFontColor;
+        }
+    }
+}
+/*-----end download app section------*/
+/*-----begin of latest news section---*/
+.latest_news{
+    .latest_news1{
+        @extend %sectionProps;
+        max-width: 100%;
+        padding-bottom: 60px;
+    }
+}
+
+.habit{
+    @extend .prices;
+    background-color: #fff;
+    padding-bottom: 120px;
+    .backgrounddiv{
+        &>div{
+            padding: 40px;
+        }
+    }
+}
+.date{
+    padding: 10px 25px;
+    margin-left: 3px;
+    color:$secondaryFontColor;
+    border:1px solid #dddddd;
+    border-radius: 0.5em;
+    width:150px;
+    margin-bottom: 20px;
+}
+/*-----end of latest news section-----*/
+/*-----start of footer section-----*/
+footer{
+    .flex>p{
+        width: 700px;
+        margin: 21px 101px;
+        span{
+            color:$secondaryIconColor;
+        }
+      
+    }
+    input{
+        border-radius: $buttonBorderRaduis;
+        border: 1px solid #333333;
+        line-height: 40px;
+        padding-right: 110px;
+        height: 40px;
+        border-radius: 20px;
+        background: #fff;
+        padding-left: 20px;
+    }
+    button{
+        position: absolute;
+        @include linearGradient($primaryColor,$secondaryColor);
+        border-radius: 20px;
+        color:#fff;
+        border: none;
+        padding: 12px 20px;
+        position: relative;
+        bottom: 39px;
+        left: 198px;
+    }
+    h4{
+        margin-bottom: 15px;
+    }
+    background-color: $footerBgColor;
+    margin-bottom: 0px;
+    padding: $sectionPadding;
+    .container{
+        color:$primaryFontColor;
+        .gid{
+            padding-left: 103px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+        }
+    }
+    ul{
+        list-style-type: none;
+        padding: 0px;
+        li{
+            margin-bottom: 20px;
+        }
+        .lastli{
+            margin: 0px;
+        }
+    }
+    i{
+        font-size: 10px;
+        background-color: $iconsBgColor;
+        padding: 10px;
+        &:first-child{
+            padding:5px 7px;
+        }
+    }
+    .flex{
+        div{
+            padding:30px 0px  10px 185px;
+        }
+    }
+    
+}
+/*-----end of footer section-----*/
